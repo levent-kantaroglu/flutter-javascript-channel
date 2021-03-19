@@ -5,7 +5,13 @@
     </head>
 
     <body>
-        <button onclick="goBack()">Go To Back</button>
+        <button onclick="goBack()">Window</button>
+        <script type="text/javascript">
+             function goBack() {
+                window.postMessage("Hello from JS");
+             }
+        </script>
+               <button onclick="goBack()">Flutter</button>
         <script type="text/javascript">
              function goBack() {
                 flutter.postMessage("Hello from JS");
