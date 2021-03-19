@@ -26,35 +26,39 @@
     </style>
     <script>
 
-        var vibration = new VibrationController();
+        var bridge = new BridgeController();
 
-        function VibrationController() {
+        function BridgeController() {
             this.fn1 = () => {
                 console.log("window. called");
-                try { flutter.postMessage('window is called'); } catch (err) { }
+                try { window.postMessage('window is called'); } catch (err) { 
+                   alert(err)
+                }
             }
             this.fn2 = () => {
                 console.log("flutter called");
-                try { flutter.postMessage('flutter is called'); } catch (err) { }
+                try { flutter.postMessage('flutter is called'); } catch (err) {
+                   alert(err)
+                }
             }
          
         };
 
         $(document).ready(function () {
             $("#btn1").click(function () {
-                vibration.fn1();
+                bridge.fn1();
             });
             $("#btn2").click(function () {
-                vibration.fn2();
+                bridge.fn2();
             });
         });
     </script>
 </head>
 <body>
 
-    <button id="btn1" type="button" class="btn btn-primary">Window</button><br /><br />
+    <button id="btn1" type="button" class="btn btn-primary">Window.</button><br /><br />
     <br /><br />
-    <button id="btn2" type="button" class="btn btn-primary">Flutter</button><br /><br />
+    <button id="btn2" type="button" class="btn btn-primary">Flutter.</button><br /><br />
 
 
 </body>
