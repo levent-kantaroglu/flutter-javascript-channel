@@ -53,6 +53,12 @@
                    alert(err);
                 }
             }
+             this.f5 = () => {
+                console.log("Window.close called");
+                try { window.history.back(); } catch (err) {
+                   alert(err);
+                }
+            }
          
         };
 
@@ -69,6 +75,9 @@
             $("#btn4").click(function () {
                 bridge.fn4();
             });
+            $("#btn5").click(function () {
+                bridge.fn5();
+            });
         });
     </script>
 </head>
@@ -81,6 +90,9 @@
     <button id="btn3" type="button" class="btn btn-primary">Dusyeri</button><br /><br />
     <br /><br />
     <button id="btn4" type="button" class="btn btn-primary">Window.Window</button><br /><br />
+    <br /><br />
+    <button id="btn5" type="button" class="btn btn-primary">Window.close</button><br /><br />
+    <br /><br />
 
 
 </body>
