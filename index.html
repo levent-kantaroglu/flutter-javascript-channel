@@ -41,6 +41,12 @@
                    alert(err);
                 }
             }
+            this.fn3 = () => {
+                console.log("dusyeri called");
+                try { flutter.postMessage('dusyeri is called'); } catch (err) {
+                   alert(err);
+                }
+            }
          
         };
 
@@ -51,6 +57,9 @@
             $("#btn2").click(function () {
                 bridge.fn2();
             });
+            $("#btn3").click(function () {
+                bridge.fn3();
+            });
         });
     </script>
 </head>
@@ -59,6 +68,8 @@
     <button id="btn1" type="button" class="btn btn-primary">Window.</button><br /><br />
     <br /><br />
     <button id="btn2" type="button" class="btn btn-primary">Flutter.</button><br /><br />
+    <br /><br />
+    <button id="btn3" type="button" class="btn btn-primary">Dusyeri.</button><br /><br />
 
 
 </body>
