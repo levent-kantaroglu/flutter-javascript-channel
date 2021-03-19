@@ -16,7 +16,7 @@
         body {
             overscroll-behavior: none;
             overflow: hidden;
-            background-color: #300 !important;
+            background-color: #100 !important;
             color: #fff;
             font-size: 16px;
             font-weight: bold;
@@ -48,7 +48,7 @@
                 }
             }
              this.fn4 = () => {
-                console.log("Window.Window called");
+                console.log("window.window called");
                 try { window.window.postMessage('Window.Window is called'); } catch (err) {
                    alert(err);
                 }
@@ -89,9 +89,9 @@
     <br /><br />
     <button id="btn3" type="button" class="btn btn-primary">Dusyeri</button><br /><br />
     <br /><br />
-    <button id="btn4" type="button" class="btn btn-primary">Window.Window</button><br /><br />
+    <button id="btn4" type="button" class="btn btn-primary">window.window</button><br /><br />
     <br /><br />
-    <button id="btn5" type="button" class="btn btn-primary">Window.close</button><br /><br />
+    <button id="btn5" type="button" class="btn btn-primary">window.close</button><br /><br />
     <br /><br />
 
 
