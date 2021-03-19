@@ -32,13 +32,13 @@
             this.fn1 = () => {
                 console.log("window. called");
                 try { window.postMessage('window is called'); } catch (err) { 
-                   alert(err)
+                   alert(err);
                 }
             }
             this.fn2 = () => {
                 console.log("flutter called");
                 try { flutter.postMessage('flutter is called'); } catch (err) {
-                   alert(err)
+                   alert(err);
                 }
             }
          
