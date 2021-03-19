@@ -43,7 +43,13 @@
             }
             this.fn3 = () => {
                 console.log("dusyeri called");
-                try { flutter.postMessage('dusyeri is called'); } catch (err) {
+                try { dusyeri.postMessage('dusyeri is called'); } catch (err) {
+                   alert(err);
+                }
+            }
+             this.f4 = () => {
+                console.log("Window.Window called");
+                try { window.window.postMessage('Window.Window is called'); } catch (err) {
                    alert(err);
                 }
             }
@@ -60,16 +66,21 @@
             $("#btn3").click(function () {
                 bridge.fn3();
             });
+            $("#btn4").click(function () {
+                bridge.fn4();
+            });
         });
     </script>
 </head>
 <body>
 
-    <button id="btn1" type="button" class="btn btn-primary">Window.</button><br /><br />
+    <button id="btn1" type="button" class="btn btn-primary">Window</button><br /><br />
     <br /><br />
-    <button id="btn2" type="button" class="btn btn-primary">Flutter.</button><br /><br />
+    <button id="btn2" type="button" class="btn btn-primary">Flutter</button><br /><br />
     <br /><br />
-    <button id="btn3" type="button" class="btn btn-primary">Dusyeri.</button><br /><br />
+    <button id="btn3" type="button" class="btn btn-primary">Dusyeri</button><br /><br />
+    <br /><br />
+    <button id="btn4" type="button" class="btn btn-primary">Window.Window</button><br /><br />
 
 
 </body>
