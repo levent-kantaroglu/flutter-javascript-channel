@@ -29,6 +29,12 @@
         var bridge = new BridgeController();
 
         function BridgeController() {
+            this.fn0 = () => {
+                console.log("close called");
+                try { mobile.postMessage('close is called'); } catch (err) { 
+                   alert(err);
+                }
+            }
             this.fn1 = () => {
                 console.log("window. called");
                 try { window.postMessage('window is called'); } catch (err) { 
@@ -63,6 +69,9 @@
         };
 
         $(document).ready(function () {
+            $("#btn0").click(function () {
+                bridge.fn1();
+            });
             $("#btn1").click(function () {
                 bridge.fn1();
             });
@@ -82,7 +91,8 @@
     </script>
 </head>
 <body>
-
+    <button id="btn0" type="button" class="btn btn-primary">Close (X)</button><br /><br />
+    <br /><br />
     <button id="btn1" type="button" class="btn btn-primary">Window</button><br /><br />
     <br /><br />
     <button id="btn2" type="button" class="btn btn-primary">Flutter</button><br /><br />
